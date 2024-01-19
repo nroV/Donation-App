@@ -25,8 +25,10 @@ export default function SingleDonate({navigation}) {
   console.log('donation detail', donationDetail);
   return (
     <SafeAreaView style={[globalStyle.flex, globalStyle.backgroundWhite]}>
-      <BackButton onPress={() => navigation.goBack()} />
-      <ScrollView style={style.outerContainer}>
+      {/* <BackButton onPress={() => navigation.goBack()} /> */}
+      <ScrollView
+        style={style.outerContainer}
+        showsVerticalScrollIndicator={false}>
         <View style={style.gapItem}>
           <Image
             style={style.imgContainer}
@@ -44,12 +46,13 @@ export default function SingleDonate({navigation}) {
         </View>
 
         <Text style={[style.bodyText, style.gapItem]}>
-          {donationDetail.description}
+          {donationDetail.description} {donationDetail.description}{' '}
+          {donationDetail.description} {donationDetail.description}
         </Text>
-        <View>
-          <Buttons label={'Donate'} onPress={{}} />
-        </View>
       </ScrollView>
+      <View style={style.spaceButton}>
+        <Buttons label={'Donate'} onPress={{}} />
+      </View>
     </SafeAreaView>
   );
 }
@@ -58,6 +61,10 @@ const style = StyleSheet.create({
     flex: 1,
     margin: 20,
     flexDirection: 'column',
+  },
+  spaceButton: {
+    marginVertical: 20,
+    marginHorizontal: 20,
   },
   gapItem: {
     marginBottom: 25,
