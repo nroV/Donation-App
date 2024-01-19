@@ -21,6 +21,7 @@ export default function SingleDonate({navigation}) {
     dispatch(updateSelectedDonationId(params?.id));
   }, [params]);
   const donationDetail = donations.selectedDonation;
+  //this is new
   console.log('donation detail', donationDetail);
   return (
     <SafeAreaView style={[globalStyle.flex, globalStyle.backgroundWhite]}>
